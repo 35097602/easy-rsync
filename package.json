@@ -1,0 +1,80 @@
+{
+  "name": "vscode-rsync",
+  "displayName": "vscode-rsync",
+  "description": "vscode-rsync",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["*"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.runRsyncCommand",
+        "title": "Run Rsync Command"
+      }
+    ],
+    "configuration": {
+      "title": "Rsync Configuration",
+      "properties": {
+        "rsync.pathRsync": {
+          "type": "string",
+          "default": "",
+          "description": "Path to rsync executable"
+        },
+        "rsync.pathSsh": {
+          "type": "string",
+          "default": "",
+          "description": "Path to ssh executable"
+        },
+        "rsync.localPath": {
+          "type": "string",
+          "default": "",
+          "description": "Local path for rsync"
+        },
+        "rsync.remotePath": {
+          "type": "string",
+          "default": "",
+          "description": "Remote path for rsync"
+        },
+        "rsync.excludeList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            ".vscode",
+            ".git",
+            "*.exe",
+            "*.sql",
+            "*.log"
+          ],
+          "description": "List of patterns to exclude from rsync"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.100.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
