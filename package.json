@@ -1,7 +1,8 @@
 {
-  "name": "vscode-rsync",
-  "displayName": "vscode-rsync",
-  "description": "vscode-rsync",
+  "name": "easy-rsync",
+  "displayName": "easy-rsync",
+  "description": "an easy tool for rsync projects code to remote server",
+  "author": "brandon",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.100.0"
