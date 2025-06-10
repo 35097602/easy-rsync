@@ -3,6 +3,8 @@
   "displayName": "easy-rsync",
   "description": "an easy tool for rsync projects code to remote server",
   "author": "brandon",
+  "publisher": "brandon3509",
+  "icon": "logo.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.100.0"
